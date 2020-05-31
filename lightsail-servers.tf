@@ -10,14 +10,14 @@ resource "aws_lightsail_key_pair" "test-cluster-key-pair" {
   # Create private key locally for convenience when remoting into the server
   # Create private key locally for convenience when remoting into the server
   provisioner "local-exec" {
-    command = "echo '${aws_lightsail_key_pair.test-cluster-key-pair.private_key}' > local-resources/id_rsa"
+    command = "echo '${aws_lightsail_key_pair.test-cluster-key-pair.private_key}' > local_resources/id_rsa"
   }
   provisioner "local-exec" {
-    command = "chmod 600 local-resources/id_rsa"
+    command = "chmod 600 local_resources/id_rsa"
   }
   provisioner "local-exec" {
     when    = destroy
-    command = "rm -f local-resources/id_rsa"
+    command = "rm -f local_resources/id_rsa"
   }
 }
 
