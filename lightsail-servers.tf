@@ -24,7 +24,7 @@ resource "aws_lightsail_key_pair" "test-cluster-key-pair" {
 # Cluster instances
 resource "aws_lightsail_instance" "test-lightsail-servers" {
   count = 3
-  name  = "test-lightsail-server-${element(local.cluster_topology, count.index)}-${count.index}"
+  name  = "test-lightsail-server-${count.index}"
 
   availability_zone = "us-east-1a"
   blueprint_id      = "ubuntu_18_04"
