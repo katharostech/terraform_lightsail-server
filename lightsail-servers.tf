@@ -5,7 +5,7 @@ provider "aws" {
 
 # Cluster connection key pair
 resource "aws_lightsail_key_pair" "test-cluster-key-pair" {
-  name = "test-swarm-key-pair"
+  name = "test-lightsail-servers-key-pair"
 
   # Create private key locally for convenience when remoting into the server
   # Create private key locally for convenience when remoting into the server
